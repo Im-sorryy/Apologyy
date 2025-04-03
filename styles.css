@@ -1,0 +1,78 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fce4ec;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #d81b60;
+}
+
+.heart {
+    display: none;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    background-color: red;
+    transform: rotate(-45deg);
+    animation: heartbeat 1s infinite alternate ease-in-out;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -50px;
+    left: 0;
+}
+
+.heart::after {
+    left: 50px;
+    top: 0;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@keyframes heartbeat {
+    from {
+        transform: scale(1) rotate(-45deg);
+    }
+    to {
+        transform: scale(1.2) rotate(-45deg);
+    }
+}
